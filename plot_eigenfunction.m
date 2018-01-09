@@ -6,5 +6,5 @@ p.FaceColor='interp';
 axis equal
 set(gcf, 'Color', 'w');
 colorbar
-export_fig(sprintf('eigenfunction_%d.png', evnum))
+export_fig(sprintf('images/eigenfunction_%d.png', evnum))
 end

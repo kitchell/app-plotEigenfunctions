@@ -16,6 +16,7 @@ end
 config = loadjson('config.json');
 evecs = loadjson(config.evecs);
 evnum = config.eigenvector_number;
+mkdir('images');
 
 filelist = dir([config.surfaces '/*.vtk']);
 for file = 2:size(filelist)
