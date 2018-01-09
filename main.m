@@ -19,7 +19,7 @@ evnum = config.eigenvector_number;
 mkdir('images');
 
 filelist = dir([config.surfaces '/*.vtk']);
-for file = 1:size(filelist)
+for file = 2:size(filelist)
     sprintf(filelist(file).name)
     [V,F] = read_vtk([config.surfaces '/' filelist(file).name]);
     filename = plot_eigenfunction(V, F, evecs.(filelist(file).name(1:end-4)), evnum)
