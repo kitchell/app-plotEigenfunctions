@@ -1,0 +1,10 @@
+#!/bin/bash
+#PBS -l nodes=1:ppn=8:dc2,walltime=0:40:00
+#PBS -N LBmatlab
+#PBS -V
+
+if [ $ENV == "IUHPC" ]; then
+    module load matlab
+fi
+
+matlab -nodisplay -nosplash -r main
