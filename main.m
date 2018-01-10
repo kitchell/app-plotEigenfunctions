@@ -29,4 +29,5 @@ for file = 2:size(filelist)
     json.images(file).name = filelist(file).name(1:end-4);
     json.images(file).desc = filelist(file).name(1:end-4);
 end
+savejson('', json, 'images.json');
 end
