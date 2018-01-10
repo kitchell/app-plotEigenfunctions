@@ -24,7 +24,7 @@ for file = 2:size(filelist)
     [V,F] = read_vtk([config.surfaces '/' filelist(file).name]);
     %size(V)
     %size(F)
-    filename = plot_eigenfunction(V, F, evecs.(filelist(file).name(1:end-4)), evnum)
+    filename = plot_eigenfunction(V, F, evecs.(filelist(file).name(1:end-4)), evnum, filelist(file).name(1:end-4))
     json.images(file).filename = filename;
     json.images(file).name = filelist(file).name(1:end-4);
     json.images(file).desc = filelist(file).name(1:end-4);
