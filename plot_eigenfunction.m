@@ -6,6 +6,6 @@ p.FaceColor='interp';
 axis equal
 set(gcf, 'Color', 'w');
 colorbar
-filename = strcat('images/', surfname, '_eigenfunction_', str(evnum), '.png')
+filename = strcat('images/', surfname, '_eigenfunction_', num2str(evnum), '.png')
 export_fig(filename)
 end
