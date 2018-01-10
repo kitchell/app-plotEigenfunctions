@@ -1,7 +1,7 @@
 function [filename] = plot_eigenfunction(V, F, evecs, evnum, surfname)
 az = [0 0 0 0 90 270];
 el = [90 180 270 360 0 0];
-v = ['top' 'back' 'bottom' 'front' 'right' 'left'];
+v = {'top', 'back' ,'bottom', 'front' ,'right' ,'left'};
 for angle = 1:size(az, 2)
     clf
     figure
