@@ -5,8 +5,8 @@ v = {'top', 'back' ,'bottom', 'front' ,'right' ,'left'};
 for angle = 1:size(az, 2)
     clf
     figure
-    p=patch('Vertices', V', 'Faces', F', 'FaceVertexCData', evecs(:,evnum), 'LineStyle', 'none');
-    p.FaceColor='interp';
+    p=patch('Vertices', V', 'Faces', F', 'FaceVertexCData', evecs(:,evnum), 'FaceColor', 'interp', 'LineStyle', 'none');
+    %p.FaceColor='interp';
     axis equal
     view(az(angle), el(angle));
     set(gcf, 'Color', 'w');
