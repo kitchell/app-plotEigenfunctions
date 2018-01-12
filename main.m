@@ -14,7 +14,8 @@ end
 
 
 config = loadjson('config.json');
-evecs = loadjson(config.evecs);
+%evecs = loadjson(config.evecs);
+load config.evecs
 evnum = config.eigenvector_number;
 mkdir('images');
 
