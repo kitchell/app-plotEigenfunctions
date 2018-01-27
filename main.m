@@ -15,7 +15,7 @@ end
 
 config = loadjson('config.json');
 %evecs = loadjson(config.evecs);
-load(config.evecs)
+load(fullfile(config.evecs_folder, 'eigenvectors.mat'))
 evnum = config.eigenvector_number;
 mkdir('images');
 
