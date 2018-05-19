@@ -22,17 +22,18 @@ mkdir('images');
 filelist = dir([config.surfaces '/*.vtk']);
 for file = 1:size(filelist)
     sprintf(filelist(file).name)
-    [V,F] = read_vtk([config.surfaces '/' filelist(file).name]);
-    %size(V)
-    %size(F)
-    iminfo = plot_eigenfunction(V, F, evecs_struct.(filelist(file).name(1:end-4)), evnum, filelist(file).name(1:end-4));
-    for im = 1:size(iminfo, 2)
-        json.images(((file-1) * 6) + im) = iminfo(im);
-    end
+    if isfield(evecs_struct,filelist(file).name(1:end-4))
+        [V,F] = read_vtk([config.surfaces '/' filelist(file).name]);
+        %size(V)
+        %size(F)
+        iminfo = plot_eigenfunction(V, F, evecs_struct.(filelist(file).name(1:end-4)), evnum, filelist(file).name(1:end-4));
+        for im = 1:size(iminfo, 2)
+            json.images(((file-1) * 6) + im) = iminfo(im);
+        end
 
-%     json.images(file).filename = filename;
-%     json.images(file).name = filelist(file).name(1:end-4);
-%     json.images(file).desc = filename(7:end);
+    %     json.images(file).filename = filename;
+    %     json.images(file).name = filelist(file).name(1:end-4);
+    %     json.images(file).desc = filename(7:end);
 end
 savejson('', json, 'images.json');
 end
